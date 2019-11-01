@@ -1,14 +1,33 @@
 
+//VALIDA EL ACCESO A LA API DE SOUND CLOUD
 SC.initialize({
     client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb',
   });
+
+  //ESTA FUNCION SE INICIA AL HACER CLICK EN UNA CANCION, EL METODO JQUERY .HTML CREA UN CONTENEDOR CON EL REPRODUCTOR WIDGET DE SOUNCLOUD
+  
+    function reproducirCancion(cancion){
+            var track_url = cancion;
+        SC.oEmbed(track_url, { auto_play: true })
+        .then(function(oEmbed) {
+        const reproductorEmbebido=oEmbed.html;
+        $('footer').html(reproductorEmbebido);
+    })
+    .catch(e=>console.log(e));
+    
+} 
+
+  
+  
+
+  
 
 async function gestionarBusqueda(){
     
     const valorDeInput =  $('input').val();
     await busqueda(valorDeInput)
     .then( res => mostrarResultados(res))
-    .catch(e => console.log("ha habido un error" + e))
+    .catch(e => console.log(e))
     
    
     
@@ -16,11 +35,13 @@ async function gestionarBusqueda(){
 }
 
 function mostrarResultados(objetosCanciones){
-    console.log("entra aqui");
+    console.log(objetosCanciones);
     const arrayObjetosRecibidos = objetosCanciones;
+    $('#listaReproduccion').html('');
     arrayObjetosRecibidos.forEach(element => {
-        $('#listaReproduccion').append(`<p id='${element.id}'>${element.title}</p>`);
+        $('#listaReproduccion').append(`<a href="#" onclick="reproducirCancion(this.id)" id='${element.permalink_url}'>${element.title}</a>`);
         console.log(element.title)
+        $('#fotoBanda').src=""
     });
     // objetosCanciones.array.forEach(element => {
     //     $('#listaReproduccion').append(`<p id='${element.id}'>${element.title}</p>`);
@@ -30,9 +51,7 @@ function mostrarResultados(objetosCanciones){
 }
 
 
-function reproducirCanciones(){
 
-}
 
 async function busqueda(parametroBusqueda){
     
