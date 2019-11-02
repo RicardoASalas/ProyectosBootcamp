@@ -7,12 +7,12 @@ SC.initialize({
 //LA FUNCION DROP SE INICIA AL SALTAR EL EVENTO ONDROP DE LA CAJA CONTENEDORA DEL REPRODUCTOR, RECIBE DATOS DE LA 
 //FUNCION DRAG. EL METODO JQUERY .HTML CREA UN CONTENEDOR EN EL LA CAJA #REPRODUCTOR CON EL REPRODUCTOR WIDGET DE SOUNDCLOUD
   
-function drop(event){
+async function drop(event){
    
     event.preventDefault();
     track_url = event.dataTransfer.getData('data');
     zonaDeDrop = '<h2>Arrastra la cancion aqui para reproducirla.</h2>';
-    SC.oEmbed(track_url, { auto_play: true })
+    await SC.oEmbed(track_url, { auto_play: true })
         .then(function(oEmbed) {
         const reproductorEmbebido=oEmbed.html;
         $('#reproductor').html(reproductorEmbebido);
