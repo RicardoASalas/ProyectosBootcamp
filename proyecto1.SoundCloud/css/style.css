@@ -1,0 +1,43 @@
+
+* {
+    box-sizing: border-box;
+}
+html{
+    height: 100vh;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+}
+header{
+    height: 20%;
+    width: 100%;
+}
+
+main{
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+
+footer{
+    height: 10%;
+    width: 100%;
+}
+
+
+#listaReproduccion{
+    width:50%;
+    height:100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    }
+.arrastraCancion{
+    display:flex;
+    flex-direction: column;
+}
+
+
+
