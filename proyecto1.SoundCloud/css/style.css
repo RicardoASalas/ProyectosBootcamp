@@ -1,7 +1,9 @@
 
 * {
     box-sizing: border-box;
+    color:white;
 }
+
 html{
     height: 100vh;
     width: 100%;
@@ -12,10 +14,35 @@ body{
     background-color: grey;
 }
 header{
+    display: flex;
+    
     height: 20%;
     width: 100%;
 }
-
+#buscador{
+    height:100%;
+    width: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: black;
+}
+input{
+    color: black
+}
+.caratula{
+    height:100px;
+    width: 100px;
+}
+#tituloCabecera{
+    height:100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 main{
     height: 70%;
     width: 100%;
@@ -37,6 +64,37 @@ footer{
 .arrastraCancion{
     display:flex;
     flex-direction: column;
+    margin:5px;
+}
+iframe{
+    height:200px;
+    width:80%;
+    margin:20px;
+}
+
+#reproductor{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sueltaCancion{
+    margin: 15px;
+}
+
+footer{
+    border-color: black;
+    border-width: 0.15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.pie{
+    margin:50px;
 }
 
 
