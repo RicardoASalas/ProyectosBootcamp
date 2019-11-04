@@ -42,8 +42,6 @@ function mostrarResultados(objetosCanciones){
     
     const arrayObjetosRecibidos = objetosCanciones;
     
-    jQuery(document).ready(function() {
-    
         $('#listaReproduccion').html('');
         arrayObjetosRecibidos
         .filter(element => element.artwork_url != null)
@@ -51,11 +49,9 @@ function mostrarResultados(objetosCanciones){
 
             $('#listaReproduccion').append(`<div id = '${element.permalink_url}' class = "arrastraCancion"  
             draggable = "true" ondragstart = "drag(event)" ><p  class = "titulo">
-             ${element.title}</p><img class = "caratula" src='${element.artwork_url}'</div>`); 
+             ${element.title}</p><img class = "caratula" draggable = "false" src='${element.artwork_url}'</div>`); 
             
-      
         });
-    });
     
 }
 

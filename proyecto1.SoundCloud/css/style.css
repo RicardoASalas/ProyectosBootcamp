@@ -15,9 +15,10 @@ body{
 }
 header{
     display: flex;
-    
+    background-color: #585858;
     height: 20%;
     width: 100%;
+  
 }
 #buscador{
     height:100%;
@@ -28,13 +29,20 @@ header{
 }
 button{
     background-color: black;
+    height:30px;
+    margin:15px;
+
 }
-input{
-    color: black
+.introducirBusqueda{
+    color: black;
+    height: 30px;
+    width: 400px;
+    padding: 15px;
 }
 .caratula{
-    height:100px;
-    width: 100px;
+    height:150px;
+    width: 150px;
+    border-radius:15%;
 }
 #tituloCabecera{
     height:100%;
@@ -42,29 +50,27 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 36px;
 }
 main{
     height: 70%;
     width: 100%;
     display: flex;
 }
-
-footer{
-    height: 10%;
-    width: 100%;
-}
-
+    
 
 #listaReproduccion{
     width:50%;
     height:100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color:#2E2E2E;
+
     }
 .arrastraCancion{
     display:flex;
     flex-direction: column;
-    margin:5px;
+    margin:15px;
 }
 iframe{
     height:200px;
@@ -85,15 +91,24 @@ iframe{
 }
 
 footer{
-    border-color: black;
+   
     border-width: 0.15px;
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
+    height: 10%;
+    width: 100%;
 }
+
 .pie{
+    border-color:black;
+    height:100%;
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+}
+.datosPie{
     margin:50px;
 }
 

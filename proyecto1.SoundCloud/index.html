@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Richi Cloud</title>
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
     <header>
         <div id = "buscador">
-            <div id="contenedorBuscador">
-                <input></input>
-                <button onclick="gestionarBusqueda()">buscar</button>
+            <div id ="contenedorBuscador">
+                <input class = "introducirBusqueda" placeholder = "Nombre de canción, autor, album...."></input>
+                <button onclick="gestionarBusqueda()" >Buscar cancion</button>
             </div>
         </div>
         <div id="tituloCabecera">
@@ -27,9 +27,11 @@
         </div>
     </main>
     <footer>
-        <p class="pie">Autor: Richi</p>
-        <p class="pie">Año: 2019</p>
-        <p class="pie">Lugar: valencia</p>
+        <div class="pie">
+            <p class="datosPie">Autor: Richi</p>
+            <p class="datosPie">Año: 2019</p>
+            <p class="datosPie">Lugar: valencia</p>
+        </div>
     </footer>
     
     <script src="https://w.soundcloud.com/player/api.js"></script>
