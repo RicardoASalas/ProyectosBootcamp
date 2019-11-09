@@ -39,13 +39,14 @@ class reproductor {
         this.arrayObjetosRecibidos
             .filter(element => element.artwork_url != null)
             .forEach(element => {
-
+                console.log(element)
                 $(selectorIdListaReproduccion).append(`<div id = '${element.id}' class = "arrastraCancion" 
                 draggable = "true" ondragstart = '${this.nombreObjeto}.drag(event)' >
                 <img class = "caratula" draggable = "false" src='${element.artwork_url}'><div class="cajaDatosCancion">
                 <p  class = "datosCancion">
                 ${element.title}</p><p  class = "datosCancion">
                 ${element.user.username}</p></div></div>`);
+                
 
             });
 
@@ -105,7 +106,6 @@ class reproductor {
         let widgetElemento = document.querySelector('iframe');
         let reproductorWidget = SC.Widget(widgetElemento);
         var nivelVolumen = event.target.value;
-        console.log(nivelVolumen)
         reproductorWidget.setVolume(nivelVolumen);
     }
 
