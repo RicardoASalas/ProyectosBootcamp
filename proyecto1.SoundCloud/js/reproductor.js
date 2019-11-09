@@ -29,11 +29,13 @@ class reproductor {
     mostrarResultados(objetosCanciones) {
 
         let selectorIdListaReproduccion = `#${this.cajaIdListaReproduccion}`
+        
         //limpia la lista de reproduccion despues de cada busqueda
         $(selectorIdListaReproduccion).html("");
         this.arrayObjetosRecibidos = objetosCanciones;
-
-        //$(`'#${this.idCajaListaReproduccion}'`).html('');
+        
+        //filtra los resultados buscados que se han almacenado en el array de objetos y se descartan los que no tienen
+        // caratula con el metodo filter
         this.arrayObjetosRecibidos
             .filter(element => element.artwork_url != null)
             .forEach(element => {
@@ -76,17 +78,6 @@ class reproductor {
         event.preventDefault();
     }
     
-    controlarVolumen(event) {
-        
-        let widgetElemento = document.querySelector('iframe');
-
-        let reproductorWidget = SC.Widget(widgetElemento);
-        console.log(event);
-        let nivelVolumen = event.target.value;
-        console.log("el volumen es " + nivelVolumen);
-        reproductorWidget.setVolume(nivelVolumen);
-    }
-
     //LA FUNCION DROP SE INICIA AL SALTAR EL EVENTO ONDROP DE LA CAJA CONTENEDORA DEL REPRODUCTOR, RECIBE DATOS DE LA 
     //FUNCION DRAG. EL METODO JQUERY .HTML CREA UN CONTENEDOR EN EL LA CAJA #REPRODUCTOR CON EL REPRODUCTOR WIDGET DE SOUNDCLOUD
 
@@ -98,9 +89,9 @@ class reproductor {
 
         let zonaDeDrop = '<h2>Arrastra la cancion aqui para reproducirla.</h2>';
 
-        let reproductorEmbebido = `<input id="controlVolumen" onchange="${this.nombreObjeto}.controlarVolumen(event)" type="range" min="0" max="100" value="50" step="10" id="mislider">
-        <span id="valor"></span>
-        <iframe allow="autoplay" width="100%" height="400" scrolling="no" frameborder="no" 
+        let reproductorEmbebido = `<label for="controlVolumen">Volumen</label>
+        <input id="controlVolumen" onchange="${this.nombreObjeto}.controlarVolumen(event)" type="range" min="0" max="100" value="50" step="10" id="mislider">
+        <span id="valor"></span><iframe allow="autoplay" width="100%" height="400" scrolling="no" frameborder="no" 
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${cancionId}?client_id=${this.tokenAutentificacion}visual=true&amp;
         url=https://api.soundcloud.com/tracks/${cancionId}/stream;show_artwork=true&amp;auto_play=true">
         </iframe>`;
@@ -109,6 +100,15 @@ class reproductor {
         $(selectorCajaReproductor).append(zonaDeDrop);
 
     }
+    //funcion que controla el evento volumen
+    controlarVolumen(event) {
+        let widgetElemento = document.querySelector('iframe');
+        let reproductorWidget = SC.Widget(widgetElemento);
+        var nivelVolumen = event.target.value;
+        console.log(nivelVolumen)
+        reproductorWidget.setVolume(nivelVolumen);
+    }
+
 
     
 }

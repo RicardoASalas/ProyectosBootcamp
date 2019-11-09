@@ -4,15 +4,16 @@ $(document).ready(function () {
     let cajaReproductor="reproductor";
     let cajaListaReproduccion="listaReproduccion";
     
-    //se instancia la clase reproductor y se crea un objeto de esa clase.
+    //se limpia la casilla de busqueda
     
     $('.introducirBusqueda').val("");
 
     
-
+    //se instancia la clase reproductor y se crea un objeto de esa clase.
     richify = new reproductor(nombreReproductor, token, 'richify' , " ", cajaReproductor, cajaListaReproduccion);
     $('#tituloCabecera').append(nombreReproductor);
 
+    //se llama a la funcion que autentifica la api de soundcloud
     richify.autentificarToken();
     
     
@@ -44,16 +45,16 @@ $(document).ready(function () {
                 richify.mostrarResultados(objetoCanciones)
                 
         }
-    
+    //gestion del evento click en el boton de busqueda
         $('#botonBuscar').click( gestionarBusqueda);
     
+    //gestion del evento keyup al presionar enter
         $('.introducirBusqueda').on("keyup", e=>{
             if (e.keyCode === 13){
                 
                 gestionarBusqueda();
             }
-        });
-    
+        });   
 
 })
 
