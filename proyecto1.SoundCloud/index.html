@@ -12,19 +12,14 @@
     <header>
         <div id = "buscador">
             <div id ="contenedorBuscador">
-                <input class = "introducirBusqueda" placeholder = "Nombre de canción, autor, album...."></input>
-                <button onclick="gestionarBusqueda()" >Buscar cancion</button>
+                <input class = "introducirBusqueda" placeholder = "Nombre de canción, autor, album...." ></input>
+                <button id='botonBuscar'>Buscar cancion</button>
             </div>
         </div>
         <div id="tituloCabecera">
-        <h1>Richi Cloud</h1>
         </div>
     </header>
     <main>
-        <div id="listaReproduccion"></div>
-        <div id="reproductor" ondragover = "permitirDrop(event)" ondrop = "drop(event)">
-            <h2>Arrastra la cancion aqui para reproducirla.</h2>
-        </div>
     </main>
     <footer>
         <div class="pie">
@@ -34,9 +29,11 @@
         </div>
     </footer>
     
-    <script src="https://w.soundcloud.com/player/api.js"></script>
+    
     <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/reproductor.js"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
