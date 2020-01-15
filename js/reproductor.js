@@ -88,7 +88,7 @@ class reproductor {
 
         let cancionId = event.dataTransfer.getData('data');
 
-        let zonaDeDrop = '<h2>Arrastra la cancion aqui para reproducirla.</h2>';
+        let zonaDeDrop = '<p class="arrastrarText">Arrastra la cancion aqui para reproducirla.</p>';
 
         let reproductorEmbebido = `<label for="controlVolumen">Volumen</label>
         <input id="controlVolumen" onchange="${this.nombreObjeto}.controlarVolumen(event)" type="range" min="0" max="100" value="50" step="10" id="mislider">

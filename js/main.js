@@ -26,7 +26,7 @@ $(document).ready(function () {
         $('main').append(
         `<div id=${cajaReproductor} ondragover = "richify.permitirDrop(event)" ondrop = "richify.drop(event)">
             <img id="logoMain" src="img/logo.png">
-            <h2>Arrastra la cancion aqui para reproducirla.</h2>
+            <p class="arrastrarText">Arrastra la cancion aqui para reproducirla.</p>
         </div>`
         );
     
